@@ -130,6 +130,7 @@ a:hover {
     rgb(119, 81, 204) 83.1%
   );
   color: var(--color-bg);
+  /* color: var(--color-primary-linear); */
 }
 
 img {
