@@ -9,6 +9,7 @@ import { experiences } from "../../constants";
 import { styles } from "../../styles.js";
 import { textVariant } from "../../utils/motion";
 import "./Experience.css";
+import { SectionWrapper } from "../../hoc";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -95,4 +96,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default SectionWrapper(Experience, "work");
