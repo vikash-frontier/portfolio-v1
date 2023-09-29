@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
 import Skills from "./components/Skills/Skills";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Experience />
       <Skills />
+      <Footer />
     </div>
   );
 }
