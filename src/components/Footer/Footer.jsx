@@ -3,6 +3,7 @@ import { CgFacebook } from "react-icons/cg";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import "./Footer.css";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
       </ul>
 
       <div className="footer_socials">
-        <div whilehover={{ scale: 1.1 }}>
+        <div whilehover={{ scale: 2.5 }}>
           <a
             href="https://www.linkedin.com/in/vikashkr-dev/"
             target="_blank"
@@ -40,7 +41,7 @@ const Footer = () => {
             <FaLinkedin />
           </a>
         </div>
-        <div whilehover={{ scale: 1.1 }}>
+        <motion.div whilehover={{ scale: 1.1 }} onHoverStart={{ scale: 1.2 }}>
           <a
             href="https://www.instagram.com/btwitsme_v/?hl=en"
             target="_blank"
@@ -48,7 +49,7 @@ const Footer = () => {
           >
             <GrInstagram />
           </a>
-        </div>
+        </motion.div>
         <div whilehover={{ scale: 1.1 }}>
           <a
             href="https://twitter.com/im_vikashkr"
