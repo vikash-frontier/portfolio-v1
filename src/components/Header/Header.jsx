@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
 import { AiOutlineCaretDown } from "react-icons/ai";
+import {
+  nextLogo,
+  reactLogo,
+  tailwindLogo,
+  typeScriptLogo,
+} from "../../assets";
 
 const Header = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -25,11 +31,9 @@ const Header = () => {
   return (
     <header>
       <div className="background_words">
-        <img src="https://i.ibb.co/86hSvcL/react.webp" alt="React" />
-
-        <img src="https://i.ibb.co/w44qb6n/nextjs.webp" alt="NextJS" />
-
-        <img src="https://i.ibb.co/k0ZkSJ7/tailwind.webp" alt="TailwindCSS" />
+        <img className="wiggle" src={nextLogo} alt="NextJS" />
+        <img className="wiggle" src={reactLogo} alt="React" />
+        <img className="wiggle" src={typeScriptLogo} alt="typescript" />
       </div>
       <Particles
         id="tsparticles"

@@ -5,13 +5,12 @@ header {
 
 .background_words {
   display: flex;
-  justify-content: end;
-  align-items: end;
+  flex-direction: row;
+  justify-content: flex-end;
   gap: 1rem;
   background: transparent;
   position: absolute;
   top: 2%;
-  left: 0;
   width: 100%;
   padding-right: 10px;
 }
@@ -22,8 +21,25 @@ header {
   opacity: 70%;
 }
 
-.background_words > img:nth-child(2) {
+.background_words > img {
+  width: fit-content;
+  height: 3rem;
+  opacity: 70%;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.background_words > img {
   background-color: white;
+  border: 1px solid #b86df5;
   border-radius: 50%;
 }
 
@@ -32,6 +48,10 @@ header {
   color: #b86df5;
   font-weight: 700;
   opacity: 20%;
+}
+
+.wiggle:hover {
+  animation: wiggle 2s infinite;
 }
 
 .header_container {
