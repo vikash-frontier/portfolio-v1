@@ -127,7 +127,7 @@ const Skills = () => {
 
   return (
     <section
-      id="skills0"
+      id="skills"
       data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1500"

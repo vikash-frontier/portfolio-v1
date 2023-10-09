@@ -8,8 +8,6 @@ import Skills from "./components/Skills/Skills";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <PreLoader />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineHome, AiOutlineUser, AiOutlineRocket } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { BiBook } from "react-icons/bi";
@@ -7,6 +7,39 @@ import "./Nav.css";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate the scroll position
+      const scrollPosition = window.scrollY;
+
+      const sectionPositions = {
+        "#": 0, // Home
+        "#about": document.getElementById("about").offsetTop,
+        "#experience": document.getElementById("experience").offsetTop,
+        "#skills": document.getElementById("skills").offsetTop,
+        "#portfolio": document.getElementById("portfolio").offsetTop,
+        "#contact": document.getElementById("contact").offsetTop,
+      };
+
+      let visibleSection = "#";
+      for (let section in sectionPositions) {
+        if (scrollPosition >= sectionPositions[section]) {
+          visibleSection = section;
+        }
+      }
+
+      setActiveNav(visibleSection);
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -41,9 +74,9 @@ const Nav = () => {
         </a>
         <a
           title="Skills"
-          href="#skills0" // Updated to match the id of "Skills0"
-          onClick={() => setActiveNav("#skills0")} // Updated to match the id of "Skills0"
-          className={activeNav === "#skills0" ? "active" : ""}
+          href="#skills"
+          onClick={() => setActiveNav("#skills")}
+          className={activeNav === "#skills" ? "active" : ""}
         >
           <BiBook />
         </a>
