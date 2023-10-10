@@ -10,17 +10,23 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate the scroll position
       const scrollPosition = window.scrollY;
 
-      const sectionPositions = {
-        "#": 0, // Home
-        "#about": document.getElementById("about").offsetTop,
-        "#experience": document.getElementById("experience").offsetTop,
-        "#skills": document.getElementById("skills").offsetTop,
-        "#portfolio": document.getElementById("portfolio").offsetTop,
-        "#contact": document.getElementById("contact").offsetTop,
-      };
+      const sectionIds = [
+        "about",
+        "experience",
+        "skills",
+        "portfolio",
+        "contact",
+      ];
+      const sectionPositions = {};
+
+      sectionIds.forEach((id) => {
+        const element = document.querySelector(`#${id}`);
+        if (element) {
+          sectionPositions[`#${id}`] = element.offsetTop;
+        }
+      });
 
       let visibleSection = "#";
       for (let section in sectionPositions) {
