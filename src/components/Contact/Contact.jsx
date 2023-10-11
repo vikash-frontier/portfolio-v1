@@ -7,14 +7,17 @@ import { useInView } from "react-intersection-observer";
 import "./Contact.css";
 
 const Contact = () => {
-  //data-aos="zoom-out"
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+  const { ref } = useInView({ threshold: 0.2 });
 
   return (
-    <section id="contact">
+    <section ref={ref} id="contact">
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
-      <div className="container contact_container">
+      <div data-aos="zoom-out" className="container contact_container">
         <div className="contact_options">
           <article className="contact_option">
             <GrMail className="contact_option_icon" />
