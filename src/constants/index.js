@@ -1,5 +1,9 @@
 import { frontier, newton } from "../assets";
 
+const templateId = "template_9g8ql9r";
+const serviceId = "service_3uctolo";
+const publicKey = "xcaYUkooxzbxyNjZs";
+
 const experiences = [
   {
     title: "Software Engineer (Frontend Developer)",
@@ -199,4 +203,4 @@ const skills = [
   },
 ];
 
-export { experiences, skills };
+export { experiences, skills, templateId, serviceId, publicKey };
