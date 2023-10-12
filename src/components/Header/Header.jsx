@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className="background_words">
+      <div className="background_words hidden md:flex">
         <img className="wiggle" src={nextLogo} alt="NextJS" />
         <img className="wiggle" src={reactLogo} alt="React" />
         <img className="wiggle" src={typeScriptLogo} alt="typescript" />
